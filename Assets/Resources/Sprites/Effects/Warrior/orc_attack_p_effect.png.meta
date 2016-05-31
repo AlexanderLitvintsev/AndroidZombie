@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: 77ae58de5a213d64a98cadc1f8dee974
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: orc_attack_p_effect
+    21300002: orc_attack_p_effect_0
+    21300004: orc_attack_p_effect_1
+    21300006: orc_attack_p_effect_2
+    21300008: orc_attack_p_effect_3
+    21300010: orc_attack_p_effect_4
+    21300012: orc_attack_p_effect_5
+    21300014: orc_attack_p_effect_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 72
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: orc_attack_p_effect_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 235
+        width: 82
+        height: 82
+      alignment: 9
+      pivot: {x: 0.4451219, y: 0.49390244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orc_attack_p_effect_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 229
+        width: 89
+        height: 95
+      alignment: 9
+      pivot: {x: 0.41011235, y: 0.5105263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orc_attack_p_effect_2
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 217
+        width: 96
+        height: 104
+      alignment: 9
+      pivot: {x: 0.41250005, y: 0.5230769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orc_attack_p_effect_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 35
+        width: 94
+        height: 168
+      alignment: 9
+      pivot: {x: 0.6326152, y: 0.003012135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orc_attack_p_effect_4
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 26
+        width: 96
+        height: 167
+      alignment: 9
+      pivot: {x: 0.630075, y: 0.0031243283}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orc_attack_p_effect_5
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 65
+        width: 104
+        height: 128
+      alignment: 9
+      pivot: {x: 0.9948886, y: 0.12078971}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: orc_attack_p_effect_6
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 65
+        width: 104
+        height: 111
+      alignment: 9
+      pivot: {x: 0.99562836, y: 0.13948843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
