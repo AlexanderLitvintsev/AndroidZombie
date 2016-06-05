@@ -9,6 +9,27 @@ public class CZombie : MonoBehaviour {
     public enum STATE { IDLE, WALK, ATTACK, DIE }
     public STATE zombieState = STATE.WALK;
 
+    // Hit sound audio clip
+    public AudioClip hitAudioClip;
+
+
+    protected Animator animator;
+    protected SpriteRenderer spriteRenderer;
+
+    // Player reference
+    protected Transform player;
+
+    // Monster hit count
+    protected int hitCount = 0;
+    // Monster hit effect position
+    public Transform hitPoint;
+    // Monster attack effect position
+    public Transform attackHitPoint;
+    // Monster hit effect prefab
+    protected UnityEngine.Object hitPrefab;
+    // Monster attack hit effect prefab
+    protected UnityEngine.Object attackHitPrefab;
+
     /// <summary>
     /// Object speed
     /// </summary>
@@ -36,6 +57,30 @@ public class CZombie : MonoBehaviour {
     /// Inflicts damage and check if the object should be destroyed
     /// </summary>
     /// <param name="damageCount"></param>
+    /// 
+    void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        hitPrefab = (UnityEngine.Object)Resources.Load("Prefabs/Effects/Hit");
+        attackHitPrefab = (UnityEngine.Object)Resources.Load("Prefabs/Effects/AttackHit");
+    }
+
+    void Start()
+    {
+    InitMonster();
+    }
+
+
+    // Monster initialize
+    public virtual void InitMonster()
+    {
+        player = GameObject.Find("Player").transform;
+
+       // StartMove();
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -55,7 +100,26 @@ public class CZombie : MonoBehaviour {
         // Apply movement to the rigidbody
         GetComponent<Rigidbody2D>().velocity = movement;
     }
-    
+
+    public void Hit()
+    {
+        GameObject hit_effect = (GameObject)Instantiate(hitPrefab, hitPoint.position, Quaternion.identity);
+        Destroy(hit_effect, 0.3f);
+        /*
+        if (hitCount > 2)
+        {
+            DoDestroy(1f);
+            return;
+        }
+        */
+        hitCount++;
+
+        CGameSound.PlayGameSound(hitAudioClip, transform.position);
+
+        //GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        //animator.SetTrigger("Hit");
+    }
     // Health Script
 
     public void Damage(float damageCount)
@@ -68,7 +132,8 @@ public class CZombie : MonoBehaviour {
             GetComponent<Animation>().Play("zb_dead1");
             speed.x = 0;
             speed.y = 0;
-            Destroy(gameObject, .7f);
+            DoDestroy(1f);
+            //Destroy(gameObject, .7f);
         }
     }
 
@@ -82,12 +147,24 @@ public class CZombie : MonoBehaviour {
             if (Bullet.isEnemyShot != isEnemy)
             {
                 Damage(Bullet.damage);
-
+                Hit();
                 // Destroy the shot
                 Destroy(Bullet.gameObject); // Remember to always target the game object, otherwise you will just remove the script
             }
         }
     }
+    // Monster Death
+    public void DoDestroy(float delay_time = 7f)
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
 
-    
+        CGameInfo.GAME_SCORE += 1;
+
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        animator.SetTrigger("Die");
+
+        Destroy(gameObject, delay_time);
+    }
+
 }

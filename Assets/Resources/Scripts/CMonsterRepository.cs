@@ -19,6 +19,7 @@ public class CMonsterRepository : MonoBehaviour
         monsterPrefabMap = new Dictionary<string, Object>();
         
         monsterPrefabMap.Add("Warrior", Resources.Load("Prefabs/Monsters/Warrior"));
+        monsterPrefabMap.Add("urban_zombie_mobile1", Resources.Load("Prefabs/Monsters/urban_zombie_mobile1"));
     }
 
     // Get monster prefab

@@ -62,8 +62,10 @@ public class CGameLevelManager : MonoBehaviour {
 
         Vector3 generate_position = monsterGeneratePoint.FindChild("GeneratePoint" + generate_point_index.ToString()).position;
 
-        Object monster_prefab = monsterRepository.GetMonsterPrefab("Warrior");
-        Instantiate(monster_prefab, generate_position, Quaternion.identity);
+        //Object monster_prefab = monsterRepository.GetMonsterPrefab("Warrior");
+        Object urban_zombie_mobile1 = monsterRepository.GetMonsterPrefab("urban_zombie_mobile1");  // ZOMBIE
+        //Instantiate(monster_prefab, generate_position, Quaternion.identity);
+        Instantiate(urban_zombie_mobile1, generate_position, Quaternion.identity);
 
         yield return new WaitForSeconds(generate_time);
 
