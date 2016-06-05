@@ -149,7 +149,8 @@ public class CZombie : MonoBehaviour {
                 Damage(Bullet.damage);
                 Hit();
                 // Destroy the shot
-                Destroy(Bullet.gameObject); // Remember to always target the game object, otherwise you will just remove the script
+                //Destroy(Bullet.gameObject, 0f); // Remember to always target the game object, otherwise you will just remove the script
+                Bullet.DoDestroy(0f);
             }
         }
     }
@@ -162,7 +163,7 @@ public class CZombie : MonoBehaviour {
 
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-        animator.SetTrigger("Die");
+  //      animator.SetTrigger("Die");
 
         Destroy(gameObject, delay_time);
     }
